@@ -17,7 +17,7 @@
       </div>
 
       <!--  ─── Cabecera ────────────────────────────────────────────────  -->
-      <h1>Anexo I – Solaicitud de Participación</h1>
+      <h1>Anexo I – Solicitud de Participación</h1>
 
       <!--  ─── Campos principales ──────────────────────────────────────  -->
       <div class="fields-grid">
@@ -40,7 +40,9 @@
         <label><span>Email</span><input type="email" name="email" /></label>
 
         <label><span>DNI / NIF / NIE</span><input type="text" name="nif" /></label>
-        <label><span>Nº Afiliación Seguridad Social</span><input type="text" name="ss" /></label>
+        <label><span>Nº Afiliación Seguridad Social</span>
+          <input type="text" name="ss" maxlength="12" pattern="\d{12}" title="Solo se permiten 12 dígitos" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 12)" />
+        </label>
 <label>
   <span>Ocupación (Clasificación Nacional de ocupaciones 2011) (CNO-11)</span>
   <input type="text" name="Ocupación4" maxlength="4" pattern="\d{4}" title="Solo se permiten 4 dígitos" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 4)" />

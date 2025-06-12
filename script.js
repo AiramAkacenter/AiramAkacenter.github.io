@@ -54,14 +54,14 @@ form.onsubmit = async (e) => {
   const { height } = page.getSize();
 
   // --- Ubicar campos en PDF ---
-  page.drawText(datos.expediente, { x: 171,   y: height - 193.75, size: 8, font });
-  page.drawText(datos.sector,     { x: 422.25,y: height - 193.75, size: 8, font });
-  page.drawText(datos.entidad,    { x: 287.25,y: height - 206.5,  size: 8, font });
-  page.drawText(datos.grupo + " .- " + datos.accion ,     { x: 279,   y: height - 219,    size: 8, font });
+  page.drawText(datos.expediente, { x: 171,   y: height - 193.75, size: 7, font });
+  page.drawText(datos.sector,     { x: 422.25,y: height - 193.75, size: 7, font });
+  page.drawText(datos.entidad,    { x: 277.25,y: height - 206.5,  size: 7, font });
+  page.drawText(datos.grupo + " .- " + datos.accion ,     { x: 279,   y: height - 219,    size: 7, font });
 
-  page.drawText(datos.apellido1,  { x: 153.75,y: height - 250, size: 6, font });
-  page.drawText(datos.apellido2,  { x: 246,   y: height - 250, size: 6, font });
-  page.drawText(datos.nombre,     { x: 344,   y: height - 250, size: 6, font });
+  page.drawText(datos.apellido1,  { x: 153.75,y: height - 250, size: 7, font });
+  page.drawText(datos.apellido2,  { x: 246,   y: height - 250, size: 7, font });
+  page.drawText(datos.nombre,     { x: 344,   y: height - 250, size: 7, font });
 
   // Ejemplo de dibujo en page2 (puedes eliminar si no quieres)
   /*for (let k = 1; k < 800; k += 3) {
@@ -75,16 +75,30 @@ form.onsubmit = async (e) => {
     }
   }*/
 
-  page.drawText(datos.direccion, { x: 141, y: height - 261, size: 6, font });
-  page.drawText(datos.localidad, { x: 303, y: height - 261, size: 6, font });
-  page.drawText(datos.cp,        { x: 406, y: height - 261, size: 6, font });
+  page.drawText(datos.direccion, { x: 141, y: height - 261, size: 7, font });
+  page.drawText(datos.localidad, { x: 303, y: height - 261, size: 7, font });
+  page.drawText(datos.cp,        { x: 407, y: height - 261, size: 7, font });
 
-  page.drawText(datos.telefono, { x: 128, y: height - 271, size: 6, font });
-  page.drawText(datos.email,    { x: 212, y: height - 271, size: 6, font });
-  page.drawText(datos.nif,      { x: 445, y: height - 271, size: 6, font });
+  page.drawText(datos.telefono, { x: 130, y: height - 271, size: 7, font });
+  page.drawText(datos.email,    { x: 215, y: height - 271, size: 7, font });
+  page.drawText(datos.nif,      { x: 445, y: height - 271, size: 7, font });
 
-  page.drawText(datos.ss,         { x: 226, y: height - 283, size: 6, font });
-  page.drawText(datos.nacimiento, { x: 178, y: height - 294, size: 6, font });
+  page.drawText(String(datos.ss).slice(2, 12),         { x: 262, y: height - 274, size: 8, font });
+
+
+  page.drawText(String(datos.ss).slice(0, 2),         { x: 234, y: height - 284, size: 8, font });
+
+
+
+ // Suponiendo datos.nacimiento === "YYYY-MM-DD"
+const [year, month, day] = datos.nacimiento.split('-');
+
+// luego dibujas cada parte:
+page.drawText(day,   { x: 180, y: height - 292, size: 7, font });
+page.drawText(month, { x: 202, y: height - 292, size: 7, font });
+page.drawText(year,  { x: 222, y: height - 292, size: 7, font });
+
+
 
   // --- Estudios según código ---
   const estudiosMap = {
@@ -99,7 +113,7 @@ form.onsubmit = async (e) => {
     '74': { x: 103, y: height - 537 }, '81': { x: 103, y: height - 548 }
   };
   if (estudiosMap[datos.estudios]) {
-    page.drawText('X', { ...estudiosMap[datos.estudios], size: 6, font });
+    page.drawText('X', { ...estudiosMap[datos.estudios], size: 7, font });
   }
 
   // --- Grupo de Cotización ---
@@ -123,7 +137,7 @@ form.onsubmit = async (e) => {
     'C2': { x: 103, y: height - 652 }, 'ZZ': { x: 103, y: height - 663 }
   };
   if (otraTitulacionMap[datos.otraTitulacion]) {
-    page.drawText('X', { ...otraTitulacionMap[datos.otraTitulacion], size: 6, font });
+    page.drawText('X', { ...otraTitulacionMap[datos.otraTitulacion], size: 7, font });
   }
 
   console.log("otraTitulacion:", datos.otraTitulacion);
