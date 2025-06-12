@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Solicitud Anexo I</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--  Tu hoja de estilos  -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <form id="formulario" autocomplete="off">
+      <!--  ─── Logo fijo ───────────────────────────────────────────────  -->
+      <div class="fixed-logo">
+        <img src="aka.png" alt="Logo Akacenter" />
+      </div>
+
+      <!--  ─── Cabecera ────────────────────────────────────────────────  -->
+      <h1>Anexo I – Solaicitud de Participación</h1>
+
+      <!--  ─── Campos principales ──────────────────────────────────────  -->
+      <div class="fields-grid">
+        <label><span>Nº expediente</span><input type="text" name="expediente" /></label>
+        <label><span>Sector de la programación</span><input type="text" name="sector" /></label>
+        <label><span>Entidad solicitante</span><input type="text" name="entidad" /></label>
+        <label><span>Acción formativa</span><input type="text" name="accion"  /></label>
+
+        <label><span>Nº Grupo</span><input type="text" name="grupo"  /></label>
+
+        <label><span>1er Apellido</span><input type="text" name="apellido1" /></label>
+        <label><span>2º Apellido</span><input type="text" name="apellido2" /></label>
+        <label><span>Nombre</span><input type="text" name="nombre" /></label>
+
+        <label><span>Dirección</span><input type="text" name="direccion" /></label>
+        <label><span>Localidad</span><input type="text" name="localidad" /></label>
+        <label><span>C.P.</span><input type="text" name="cp" /></label>
+
+        <label><span>Teléfono</span><input type="text" name="telefono" /></label>
+        <label><span>Email</span><input type="email" name="email" /></label>
+
+        <label><span>DNI / NIF / NIE</span><input type="text" name="nif" /></label>
+        <label><span>Nº Afiliación Seguridad Social</span><input type="text" name="ss" /></label>
+<label>
+  <span>Ocupación (Clasificación Nacional de ocupaciones 2011) (CNO-11)</span>
+  <input type="text" name="Ocupación4" maxlength="4" pattern="\d{4}" title="Solo se permiten 4 dígitos" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 4)" />
+</label>
+        <label><span>Fecha de nacimiento</span><input type="date" name="nacimiento" id="nacimiento" />
+</label>
+
+        <!--  Estudios  -->
+        <label>
+          <span>Estudios (nivel máximo)</span>
+          <select name="estudios">
+            <option value="">Seleccione una opción</option>
+            <option value="0">Sin titulación</option><option value="1">Educación Primaria</option>
+            <option value="22">E.S.O./E.G.B.</option><option value="23">Cert. Profesionalidad N1</option>
+            <option value="24">Cert. Profesionalidad N2</option><option value="32">Bachillerato</option>
+            <option value="33">FP Grado Medio</option><option value="34">Música / Danza prof.</option>
+            <option value="38">FP Básica</option><option value="41">Cert. Profesionalidad N3</option>
+            <option value="51">FP Grado Superior</option><option value="61">Grado (≤240 ECTS)</option>
+            <option value="62">Diplomas universitarios</option><option value="71">Grado (>240 ECTS)</option>
+            <option value="72">Licenciado</option><option value="73">Máster oficial</option>
+            <option value="74">Esp. Ciencias Salud (MIR etc.)</option><option value="81">Doctorado</option>
+          </select>
+        </label>
+
+        <!--  Grupo de cotización  -->
+        <label>
+          <span>Grupo de Cotización</span>
+          <select name="grupoCotizacion">
+            <option value="">Seleccione grupo</option>
+            <option value="01">Ingenieros y Licenciados</option>
+            <option value="02">Ingenieros Téc. / Ayudantes tit.</option>
+            <option value="03">Jefes adm. y taller</option>
+            <option value="04">Ayudante no titul.</option>
+            <option value="05">Oficiales administrativos</option>
+            <option value="06">Subalternos</option>
+            <option value="07">Auxiliares Admón.</option>
+            <option value="08">Oficial 1ª y 2ª</option>
+            <option value="09">Oficial 3ª / Especialista</option>
+            <option value="10">Peones</option>
+            <option value="11">Menores de 18 años</option>
+          </select>
+        </label>
+
+        <!--  Otra titulación  -->
+        <label>
+          <span>Otra Titulación</span>
+          <select name="otraTitulacion" id="otraTitulacionSelect">
+            <option value="">Seleccione una opción</option>
+            <option value="PR">Carnet profesional</option><option value="A1">A1</option>
+            <option value="A2">A2</option><option value="B1">B1</option>
+            <option value="B2">B2</option><option value="C1">C1</option>
+            <option value="C2">C2</option><option value="ZZ">Otro (especificar)</option>
+          </select>
+        </label>
+
+        <!--  Texto libre para "ZZ"  -->
+        <label id="otraTitulacionTextoLabel">
+          <span>Especifique otra titulación</span>
+          <input type="text" name="otraTitulacionTexto" id="otraTitulacionTexto" />
+        </label>
+
+        <!--  Categoría profesional  -->
+        <label>
+          <span>Categoría Profesional</span>
+          <select name="CATEGORÍA_PROFESIONAL" id="categoriaProfesionalSelect">
+            <option value="">Seleccione una opción</option>
+            <option value="Di">Directivo</option>
+            <option value="man">Mando Intermedio</option>
+            <option value="Tec">Técnico</option>
+            <option value="tra">Trabajador cualificado</option>
+            <option value="trab">Trabajador baja cualificación</option>
+          </select>
+        </label>
+
+        <!--  Situación laboral  -->
+        <label>
+          <span>Situación Laboral</span>
+          <select name="situacionLaboral">
+            <option value="">Seleccione una opción</option>
+            <option value="ocupado">Ocupado. Consignar Código</option>
+            <option value="desempleado">Desempleado</option>
+            <option value="desempleado-larga">Desempleado larga duración</option>
+            <option value="cuidador">Cuidador no profesional</option>
+          </select>
+        </label>
+
+        
+
+      
+<section id="areaFuncionalSection">
+  <div class="fields-grid">
+    <label>
+      <span>ÁREA FUNCIONAL</span>
+      <select name="areaFuncional">
+        <option value="">Seleccione un área</option>
+        <option value="DireccionOption">Dirección</option>
+        <option value="AdministracionOption">Administración</option>
+        <option value="ComercialOption">Comercial</option>
+        <option value="MantenimientoOption">Mantenimiento</option>
+        <option value="ProduccionOption">Producción</option>
+      </select>
+    </label>
+
+
+ <label>
+  <span>Consignar Código</span>
+  <select name="Consignar_Código">
+    <option value="">Seleccione un código</option>
+    <option value="RG">Regimen general (RG)</option>
+    <option value="FD">Fijos discontinuos en periodos de no ocupacion (FD)</option>
+    <option value="RE">Regulación de empleo en períodos de no ocupación (RE)</option>
+    <option value="ERTE">Personas trabajadoras afectadas por expedientes de regulación temporal de empleo (ERTE)</option>
+    <option value="RERED">Trabajadores en ERTE afectados por Mecanismo RED (RERED)</option>
+    <option value="AGP">Régimen especial agrario por cuenta propia (AGP)</option>
+    <option value="AGA">Régimen especial agrario por cuenta ajena (AGA)</option>
+    <option value="AU">Régimen especial autónomos (AU)</option>
+    <option value="AP">Administración Pública(AP)</option>
+    <option value="EH">Empleado hogar(EH)</option>
+    <option value="DF">Trabajadores que accedan al desempleo durante el periodo formativo (DF)</option>
+    <option value="RLE">Relaciones laborales especiales (RLE)</option>
+    <option value="CESS">Convenio especial con la Seguridad Social (CESS)</option>
+    <option value="FDI">Fijos discontinuos indefinidos (FDI)</option>
+    <option value="TM">Régimen del mar (TM)</option>
+    <option value="CP">Mutualistas no autónomos (CP)</option>
+    <option value="OCTP">Contrato parcial (OCTP)</option>
+    <option value="OCT">Contrato temporal (OCT)</option>
+  </select>
+</label>
+
+
+
+    <label>
+      <span>ENTIDAD DONDE TRABAJA ACTUALMENTE</span>
+      <input type="text" name="entidadTrabajo" />
+    </label>
+
+    <label>
+  <span>TAMAÑO DE EMPRESA</span>
+  <select name="Tamaño_Empresa">
+    <option value="">Seleccione un tamaño</option>
+    <option value="inferior10">Inferior a 10</option>
+    <option value="10a49">10 a 49</option>
+    <option value="50a99">50 a 99</option>
+    <option value="100a249">100 a 249</option>
+    <option value="250mas">250 o más</option>
+  </select>
+</label>
+
+
+    <label>
+      <span>Sector / Comercio</span>
+      <input type="text" name="sectorActividad" />
+    </label>
+
+    <label>
+      <span>CONVENIO DE APLICACIÓN</span>
+      <input type="text" name="convenioAplicacion" />
+    </label>
+
+    <label>
+      <span>RAZÓN SOCIAL</span>
+      <input type="text" name="razonSocial" />
+    </label>
+
+    <label>
+      <span>C.I.F.</span>
+      <input type="text" name="cif" />
+    </label>
+
+    <label>
+      <span>DOMICILIO CENTRO DE TRABAJO</span>
+      <input type="text" name="domicilioCentro" />
+    </label>
+
+    <label>
+      <span>LOCALIDAD</span>
+      <input type="text" name="localidadCentro" />
+    </label>
+
+    <label>
+      <span>C.P.</span>
+      <input type="text" name="cpCentro" />
+    </label>
+  </div>
+</section>
+
+
+
+        <!--  Género  -->
+        <label>
+          <span>Género</span>
+          <div class="radio-group2">
+            <label><input type="radio" name="genero" value="Hombre" /> Hombre</label>
+            <label><input type="radio" name="genero" value="Mujer"  /> Mujer</label>
+            <label><input type="radio" name="genero" value="NoBinario"  /> No Binario</label>
+          </div>
+        </label>
+
+        <!--  Discapacidad  -->
+        <label>
+          <span>Discapacidad</span>
+          <div class="radio-group">
+            <label><input type="radio" name="discapacidad" value="Sí" /> Sí</label>
+            <label><input type="radio" name="discapacidad" value="No" /> No</label>
+          </div>
+        </label>
+      </div><!-- /.fields-grid -->
+
+      <!--  ─── Firma ───────────────────────────────────────────────────  -->
+      <section class="glass">
+        <h2>Firma</h2>
+        <div class="firma-box">
+          <canvas id="firma" width="350" height="110"></canvas>
+          <button type="button" id="limpiarFirma" class="btn-sec">Limpiar firma</button>
+        </div>
+      </section>
+
+      <!--  ─── Botón principal ─────────────────────────────────────────  -->
+      <button type="submit" class="btn-main">Generar PDF</button>
+    </form>
+  </div>
+
+  <!--  ─── Pie de página ──────────────────────────────────────────────  -->
+  <footer><span>Akacenter © 2025</span></footer>
+
+  <!--  ─── Librerías externas ─────────────────────────────────────────  -->
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
+
+  <!--  ─── Tu script ──────────────────────────────────────────────────  -->
+  <script src="script.js"></script>
+</body>
+</html>

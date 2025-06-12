@@ -1,0 +1,268 @@
+:root {
+  --main: #00c32a;       /* Verde principal Akacenter */
+  --sec: #00c32a;        /* Verde secundario más oscuro */
+  --bg: #e8f7f3;         /* Fondo claro verdoso */
+  --white: #fff;
+  --input-bg: #f1fcfa;
+  --input-border: #00c32a;
+  --input-focus-border: var(--main);
+  --shadow: 0 4px 20px rgba(0, 195, 166, 0.15);
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --text-color: #000000;
+  --label-color: #2a6b2a;
+  --border-radius: 1rem;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: var(--font-family);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem 1rem 0 1rem; /* sin padding abajo para que footer no se separe */
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 480px;
+  width: 100%;
+  background: var(--white);
+  padding: 2.5rem 3rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  flex-grow: 1; /* Para que el container crezca y empuje el footer abajo */
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  font-weight: 700;
+  color: var(--main);
+  margin-bottom: 1.2rem;
+  font-size: 1.7rem;
+  letter-spacing: 0.03em;
+}
+
+.fields-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--label-color);
+  gap: 0.3rem;
+}
+
+input[type="text"], input[type="email"], select {
+  padding: 0.65em 1em;
+  font-size: 1rem;
+  border-radius: 0.7rem;
+  border: 2px solid var(--input-border);
+  background-color: var(--input-bg);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline-offset: 2px;
+  outline-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  color: var(--text-color);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus {
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 6px var(--input-focus-border);
+  background-color: #fff;
+}
+
+input[type="date"] {
+  padding: 0.65em 1em;
+  font-size: 1rem;
+  border-radius: 1rem;
+  border: 2px solid var(--input-border);
+  background-color: var(--input-bg);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline-offset: 2px;
+  outline-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  color: var(--text-color);
+  font-family: var(--font-family);
+}
+
+input[type="date"]:focus {
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 6px var(--input-focus-border);
+  background-color: #fff;
+}
+
+
+.radio-group, .radio-group2 {
+  display: flex;
+  gap: 1.8rem;
+  margin-top: 0.5rem;
+}
+
+.radio-group label, .radio-group2 label {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--label-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  user-select: none;
+}
+
+.radio-group input[type="radio"],
+.radio-group2 input[type="radio"] {
+  accent-color: var(--sec);
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+}
+
+.radio-group input[type="radio"]:checked + label,
+.radio-group2 input[type="radio"]:checked + label {
+  color: var(--main);
+}
+
+.btn-main, .btn-sec {
+  display: block;
+  width: 100%;
+  padding: 0.85em 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.15s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 195, 166, 0.4);
+}
+
+.btn-main {
+  background: linear-gradient(90deg, var(--main), var(--sec));
+  color: var(--white);
+  margin-top: 1.8rem;
+}
+
+.btn-main:hover {
+  background: linear-gradient(90deg, var(--sec), var(--main));
+  box-shadow: 0 6px 25px rgba(0, 142, 114, 0.6);
+  transform: scale(1.05);
+}
+
+.btn-sec {
+  background: #c9e9c6;
+  color: var(--sec);
+  margin-top: 0.8rem;
+  box-shadow: none;
+}
+
+.btn-sec:hover {
+  background: var(--sec);
+  color: var(--white);
+  box-shadow: 0 4px 15px var(--sec);
+  transform: scale(1.05);
+}
+
+.firma-box {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+canvas#firma {
+  width: 100%;
+  max-width: 350px;
+  height: 110px;
+  border-radius: 1rem;
+  background-color: var(--input-bg);
+  border: 2px solid var(--input-border);
+  box-shadow: 0 4px 12px rgba(7, 195, 0, 0.2);
+  cursor: crosshair;
+  transition: border-color 0.3s ease;
+}
+
+canvas#firma:focus,
+canvas#firma:active {
+  border-color: var(--sec);
+}
+
+.top-left-logo {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 50px;       /* ajusta el tamaño del logo */
+  height: auto;
+  z-index: 1000;     /* para que esté encima de todo */
+  cursor: pointer;   /* opcional, si quieres que sea clicable */
+}
+
+.top-left-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.fixed-logo {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 200px; /* ajusta tamaño */
+  height: auto;
+  z-index: 1000;
+}
+
+.fixed-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.info-text {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--label-color);
+  background: var(--input-bg);
+  padding: 0.75em;
+  border-radius: 0.7rem;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+#otraTitulacionTextoLabel {
+  display: none;
+}
+
+
+footer {
+  width: 100vw;
+  padding: 0.6rem 0;
+  background: var(--main);
+  text-align: center;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  border-radius: 1rem 1rem 0 0;
+  user-select: none;
+  margin: 0; /* elimina cualquier margen para que quede pegado */
+  flex-shrink: 0;
+  position: relative;
+  bottom: 0;
+}
+
+@media (max-width: 620px) {
+  .container {
+    padding: 2rem 1.5rem;
+  }
+}
