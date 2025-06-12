@@ -83,10 +83,10 @@ form.onsubmit = async (e) => {
   page.drawText(datos.email,    { x: 215, y: height - 271, size: 7, font });
   page.drawText(datos.nif,      { x: 445, y: height - 271, size: 7, font });
 
-  page.drawText(String(datos.ss).slice(2, 12),         { x: 262, y: height - 274, size: 8, font });
+  page.drawText(String(datos.ss).slice(2, 12),         { x: 262, y: height - 279, size: 7, font });
 
 
-  page.drawText(String(datos.ss).slice(0, 2),         { x: 234, y: height - 284, size: 8, font });
+  page.drawText(String(datos.ss).slice(0, 2),         { x: 234, y: height - 289, size: 7, font });
 
 
 
@@ -126,7 +126,7 @@ page.drawText(year,  { x: 222, y: height - 292, size: 7, font });
     '11': { x: 303, y: height - 488 }
   };
   if (grupoCotizacionMap[datos.grupoCotizacion]) {
-    page.drawText('X', { ...grupoCotizacionMap[datos.grupoCotizacion], size: 6, font });
+    page.drawText('X', { ...grupoCotizacionMap[datos.grupoCotizacion], size: 7, font });
   }
 
   // --- Otra Titulación ---
@@ -145,7 +145,7 @@ page.drawText(year,  { x: 222, y: height - 292, size: 7, font });
 
   if (datos.otraTitulacion === 'ZZ' && datos.otraTitulacionTexto && datos.otraTitulacionTexto.trim() !== '') {
     page.drawText(datos.otraTitulacionTexto.trim(), {
-      x: 193, y: height - 665, size: 6, font
+      x: 193, y: height - 665, size: 8, font
     });
   }
 
@@ -158,7 +158,7 @@ page.drawText(year,  { x: 222, y: height - 292, size: 7, font });
     'trab': { x: 106, y: height - 163 }
   };
   if (CategoriaProfesional[datos.CATEGORÍA_PROFESIONAL]) {
-    page2.drawText('X', { ...CategoriaProfesional[datos.CATEGORÍA_PROFESIONAL], size: 6, font });
+    page2.drawText('X', { ...CategoriaProfesional[datos.CATEGORÍA_PROFESIONAL], size: 8, font });
   }
 
 const tamanoSeleccionado = document.querySelector('select[name="Tamaño_Empresa"]').value;
@@ -182,7 +182,7 @@ if (TamañoEmpresa[tamanoSeleccionado]) {
     'cuidador': { x: 109, y: height - 355 },
   };
   if (situacion_Laboral[datos.situacionLaboral]) {
-    page2.drawText('X', { ...situacion_Laboral[datos.situacionLaboral], size: 6, font });
+    page2.drawText('X', { ...situacion_Laboral[datos.situacionLaboral], size: 8, font });
   }
 
 
@@ -195,20 +195,20 @@ if (TamañoEmpresa[tamanoSeleccionado]) {
     'ProduccionOption': { x: 305, y: height - 163 }
   };
   if (Area_Funcional[datos.areaFuncional]) {
-    page2.drawText('X', { ...Area_Funcional[datos.areaFuncional], size: 6, font });
+    page2.drawText('X', { ...Area_Funcional[datos.areaFuncional], size: 8, font });
   }
   
 
 
-  page2.drawText(datos.entidadTrabajo, { x: 260, y: height - 400, size: 6, font });
-  page2.drawText(datos.sectorActividad, { x: 180, y: height - 435, size: 6, font });
-  page2.drawText(datos.convenioAplicacion,{ x: 195, y: height - 446, size: 6, font });
+  page2.drawText(datos.entidadTrabajo, { x: 260, y: height - 400, size: 9, font });
+  page2.drawText(datos.sectorActividad, { x: 180, y: height - 435, size: 8, font });
+  page2.drawText(datos.convenioAplicacion,{ x: 195, y: height - 446, size: 8, font });
 
-  page2.drawText(datos.razonSocial, { x: 153, y: height - 468, size: 6, font });
-  page2.drawText(datos.cif, { x: 134, y: height - 480, size: 6, font });
-  page2.drawText(datos.domicilioCentro,{ x: 315, y: height - 480, size: 6, font });
-  page2.drawText(datos.localidadCentro, { x: 139, y: height - 491, size: 6, font });
-  page2.drawText(datos.cpCentro, { x: 369, y: height - 491, size: 6, font });
+  page2.drawText(datos.razonSocial, { x: 153, y: height - 468, size: 8, font });
+  page2.drawText(datos.cif, { x: 134, y: height - 480, size: 8, font });
+  page2.drawText(datos.domicilioCentro,{ x: 315, y: height - 480, size: 8, font });
+  page2.drawText(datos.localidadCentro, { x: 139, y: height - 491, size: 8, font });
+  page2.drawText(datos.cpCentro, { x: 369, y: height - 491, size: 8, font });
 
 
   // --- Consignar Código (mostrar texto seleccionado sin "X") ---
@@ -216,7 +216,7 @@ if (TamañoEmpresa[tamanoSeleccionado]) {
     page2.drawText(datos.Consignar_Código, {
       x: 227,       // ajusta la posición horizontal
       y: height - 323, // ajusta la posición vertical
-      size: 6,
+      size: 8,
       font,
     });
   }
