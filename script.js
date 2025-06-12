@@ -56,8 +56,8 @@ form.onsubmit = async (e) => {
   // --- Ubicar campos en PDF ---
   page.drawText(datos.expediente, { x: 171,   y: height - 193.75, size: 7, font });
   page.drawText(datos.sector,     { x: 422.25,y: height - 193.75, size: 7, font });
-  page.drawText(datos.entidad,    { x: 277.25,y: height - 206.5,  size: 7, font });
-  page.drawText(datos.grupo + " .- " + datos.accion ,     { x: 279,   y: height - 219,    size: 7, font });
+  page.drawText(datos.entidad,    { x: 279.25,y: height - 206.5,  size: 7, font });
+  page.drawText(datos.grupo + " .- " + datos.accion ,     { x: 277,   y: height - 219,    size: 7, font });
 
   page.drawText(datos.apellido1,  { x: 153.75,y: height - 250, size: 7, font });
   page.drawText(datos.apellido2,  { x: 246,   y: height - 250, size: 7, font });
@@ -83,10 +83,10 @@ form.onsubmit = async (e) => {
   page.drawText(datos.email,    { x: 215, y: height - 271, size: 7, font });
   page.drawText(datos.nif,      { x: 445, y: height - 271, size: 7, font });
 
-  page.drawText(String(datos.ss).slice(2, 12),         { x: 262, y: height - 279, size: 7, font });
+  page.drawText(String(datos.ss).slice(2, 12),         { x: 262, y: height - 283.5, size: 7, font });
 
 
-  page.drawText(String(datos.ss).slice(0, 2),         { x: 234, y: height - 289, size: 7, font });
+  page.drawText(String(datos.ss).slice(0, 2),         { x: 234, y: height - 283.5, size: 7, font });
 
 
 
